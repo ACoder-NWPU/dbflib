@@ -61,10 +61,10 @@ struct TableBuilder
                 auto field_name = col_def->field_name;
                 auto field_length = col_def->field_length;
                 auto field_value = contents[field_name];
-                if (field_value.size() > field_length - 1) // -1 for deleted flag
+                if (field_value.size() > field_length)
                     throw std::runtime_error(
                         "Value of field [" + field_name + "] is too long! " +
-                        "Limit = " + std::to_string(field_length - 1) + ", " +
+                        "Limit = " + std::to_string(field_length) + ", " +
                         "Actual = " + std::to_string(field_value.size())
                     );
             }
